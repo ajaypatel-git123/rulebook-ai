@@ -1,50 +1,56 @@
-# Rulebook AI
+# 📘 Rulebook AI
 
-An AI-powered Rulebook Question Answering system that can identify:
+> **AI-powered Rulebook Question Answering System**  
+> Ask questions about a university rulebook and get **evidence-based answers with source citations**.
 
-- ANSWERED
-- NOT COVERED
-- CONFLICT
+Rulebook AI uses **RAG (Retrieval-Augmented Generation)** to retrieve relevant sections from a university rulebook before using an LLM for reasoning. This helps keep answers grounded in the provided rulebook rather than relying on outside knowledge.
 
-The system retrieves relevant sections from a university rulebook and uses AI reasoning to generate evidence-based answers without relying on outside knowledge.
+## ✨ Classifications
 
-## Tech Stack
+| Classification | Meaning |
+|---|---|
+| ✅ **ANSWERED** | The rulebook contains sufficient information to answer the question. |
+| ⚠️ **NOT COVERED** | The required information is not available in the rulebook. |
+| 🔀 **CONFLICT** | Relevant rules contain contradictory information. |
 
-- Python
-- FastAPI
-- Sentence Transformers
-- FAISS
-- Groq API
-- Pydantic
-- NumPy
-- HTML / CSS / JavaScript
+## 🛠️ Tech Stack
 
-## How It Works
+- 🐍 **Python**
+- ⚡ **FastAPI**
+- 🧠 **Sentence Transformers**
+- 🔎 **FAISS**
+- 🤖 **Groq API**
+- ✅ **Pydantic**
+- 🔢 **NumPy**
+- 🌐 **HTML / CSS / JavaScript**
 
-Question
-↓
-Sentence Transformer Embedding
-↓
-FAISS Semantic Search
-↓
-Relevant Rulebook Evidence
-↓
-Groq AI Reasoning
-↓
-Classification + Answer + Citations
+## 🔄 How It Works
 
-## Classifications
+```text
+👤 User Question
+       ↓
+🧠 Sentence Transformer
+       ↓
+🔎 FAISS Semantic Search
+       ↓
+📚 Relevant Rulebook Evidence
+       ↓
+🤖 Groq AI Reasoning
+       ↓
+🏷️ Classification + Answer + Citations
+```
 
-### ANSWERED
-The rulebook contains sufficient information to answer the question.
+## 🚀 Key Features
 
-### NOT COVERED
-The rulebook does not contain information required to answer the question.
+- 📚 Semantic search over rulebook content
+- 🤖 Evidence-based AI responses
+- 🏷️ `ANSWERED / NOT COVERED / CONFLICT` classification
+- 📌 Source citations
+- ⚡ Fast vector retrieval using FAISS
+- 🔌 FastAPI backend
+- 🌐 Web-based interface
 
-### CONFLICT
-The rulebook contains contradictory rules that apply to the question.
-
-## Project Structure
+## 📂 Project Structure
 
 ```text
 rulebook-ai/
@@ -56,3 +62,55 @@ rulebook-ai/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
+
+## ⚙️ Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd rulebook-ai
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure the API key
+
+Create a `.env` file in the project root:
+
+```env
+GROQ_API_KEY=your_api_key
+```
+
+> 🔐 Never commit your API key or `.env` file to GitHub.
+
+### 5. Run the application
+
+```bash
+uvicorn app.main:app --reload
+```
+
+## 🎯 Project Goal
+
+Rulebook AI is designed to make university rules easier to query while keeping responses **grounded in the official rulebook evidence**.
+
+---
+
+⭐ **Built as a college and portfolio project focused on RAG, semantic search, LLM reasoning, and API development.**
