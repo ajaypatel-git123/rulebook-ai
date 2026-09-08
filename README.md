@@ -107,6 +107,21 @@ GROQ_API_KEY=your_api_key
 uvicorn app.main:app --reload
 ```
 
+## 🧪 Mocked / Simulated Components
+
+This project uses a **fictional university rulebook** created specifically for demonstration and evaluation purposes.
+
+The rulebook contains intentionally planted contradictions to test the system's ability to identify conflicting rules.
+
+The system itself is not mocked:
+- ✅ Semantic embeddings are generated using Sentence Transformers
+- ✅ FAISS performs the actual vector similarity search
+- ✅ Groq API performs the actual LLM reasoning
+- ✅ FastAPI serves the actual backend
+- ✅ Classification is generated from retrieved rulebook evidence
+
+No external university database or production university policy system is connected.
+
 ## 🎯 Project Goal
 
 Rulebook AI is designed to make university rules easier to query while keeping responses **grounded in the official rulebook evidence**.
