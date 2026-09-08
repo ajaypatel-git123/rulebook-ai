@@ -113,4 +113,4 @@ Rulebook AI is designed to make university rules easier to query while keeping r
 
 ---
 
-⭐ **Built as a college and portfolio project focused on RAG, semantic search, LLM reasoning, and API development.**
+
